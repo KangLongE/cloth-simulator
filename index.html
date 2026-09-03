@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='icon' href='data:,' />
+    <title>이미지 천 물리 편집기</title>
+    <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+    <div class='toolbar'>
+        <button id='tool-pointer' class='tool-button selected' title='포인터 (천 잡아당기기)'>🖱️</button>
+        <button id='tool-pin' class='tool-button' title='핀만 움직이기'>📌</button>
+        <button id='tool-pin-add' class='tool-button' title='핀 꽂기'>📌+</button>
+        <button id='tool-pin-remove' class='tool-button' title='핀 제거'>📌−</button>
+        <button id='tool-knife' class='tool-button' title='칼 (천 자르기)'>🔪</button>
+        <button id='tool-bat' class='tool-button' title='방망이 (넓게 타격하기)'>⚾</button>
+        <button id='reset' class='tool-button' title='초기화'>🔄</button>
+        <button id='download' class='tool-button' title='다운로드'>💾</button>
+    </div>
+    <input type='file' id='file-input' accept='image/*' />
+    <canvas id='canvas' aria-label='업로드한 이미지를 천처럼 잡고 자르고 타격하는 작업 공간'></canvas>
+    <script src='script.js'></script>
+</body>
+</html>

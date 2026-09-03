@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  background: #eee9e1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 25%, #faf8f3, #e5ded3);
+}
+
+.toolbar {
+  position: fixed;
+  z-index: 2;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tool-button,
+#file-input::file-selector-button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #c9c0b4;
+  border-radius: 10px;
+  background: #fffdf8;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(50, 40, 30, .1);
+}
+
+.tool-button:hover,
+.tool-button.selected {
+  border-color: #79502f;
+  background: #f1e5d7;
+}
+
+#file-input {
+  position: fixed;
+  z-index: 2;
+  top: 68px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+}
+
+#canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+}
+
+#canvas[data-tool='pointer'] { cursor: grab; }
+#canvas[data-tool='pointer']:active { cursor: grabbing; }
+#canvas[data-tool='pin'] { cursor: move; }
+#canvas[data-tool='pin-add'] { cursor: copy; }
+#canvas[data-tool='pin-remove'] { cursor: not-allowed; }
+#canvas[data-tool='knife'] { cursor: crosshair; }
+#canvas[data-tool='bat'] { cursor: none; }
+
+@media (max-width: 600px) {
+  .toolbar { top: 8px; }
+  #file-input { top: 60px; }
+}
